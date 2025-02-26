@@ -1,4 +1,5 @@
-export const TABNAVİGATOR = {
+export const TABNAVIGATOR = {
+  TabNavigator:'TabNavigator',
     Home: 'Anasayfa',
     Favorites: 'Favoriler',
     Cart: 'Sepet',

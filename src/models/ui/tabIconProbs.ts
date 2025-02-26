@@ -3,7 +3,7 @@ interface Route {
 }
 
 interface TabIconProbs {
-  focused: boolean;
+  focused?: boolean;
   size: number;
   color: string;
   route: Route;

@@ -1,11 +1,11 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Home from '../screens/home';
 import TabNavigator from './tabNavigator';
+import { TABNAVIGATOR } from '../utils/routes';
 
 const Stack = createNativeStackNavigator();
 
-const RootNavigator: React.FC<Props> = ({route, navigation}) => {
+const RootNavigator: React.FC= () => {
   return (
     <Stack.Navigator
     screenOptions={{
@@ -13,7 +13,7 @@ const RootNavigator: React.FC<Props> = ({route, navigation}) => {
        
     }}
     >
-      <Stack.Screen name="Home" component={TabNavigator} />
+      <Stack.Screen name={TABNAVIGATOR.TabNavigator} component={TabNavigator} />
     </Stack.Navigator>
   );
 };
