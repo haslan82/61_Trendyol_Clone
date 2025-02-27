@@ -5,4 +5,5 @@ export const TABNAVIGATOR = {
     Cart: 'Sepet',
     Profile: 'Profil',
     Search: 'Ara',
+
   }
