@@ -8,4 +8,5 @@ Client.defaults.baseURL = BASE_URL;
   accept: 'application/json',
   'Content-Type': 'application/json',
 }; */
+
 export default Client;
