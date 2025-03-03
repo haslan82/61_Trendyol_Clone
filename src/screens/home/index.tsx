@@ -1,26 +1,22 @@
-import React, {useEffect} from 'react';
-import {View, Text} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
-import {RootState} from '../../store';
-import {getAllCategories} from '../../store/actions/categoriesActions';
+import React from 'react';
+import Categories from '../../widgets/categories';
+import { SafeAreaView, StyleSheet, View } from 'react-native';
 
-interface Props {
-  navigation: any;
-  route: any;
-}
+
+
 
 const Home: React.FC<Props> = ({navigation, route}) => {
-  const deneme = useSelector((state: RootState) => state.products.deneme);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getAllCategories());
-  }, []);
   return (
-    <View>
-      <Text>{deneme} </Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+  <View>
+  <Categories />
+  </View>
+    </SafeAreaView>
   );
 };
-
-
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  }
+})
 export default Home;
