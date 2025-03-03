@@ -1,9 +1,8 @@
 import React, {useEffect} from 'react';
 import {View, Text} from 'react-native';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../../store';
-import {PRODUCTS_URLS} from '../../service/urls';
-import {getRequest} from '../../service/verbs';
+import {getAllCategories} from '../../store/actions/categoriesActions';
 
 interface Props {
   navigation: any;
@@ -12,14 +11,9 @@ interface Props {
 
 const Home: React.FC<Props> = ({navigation, route}) => {
   const deneme = useSelector((state: RootState) => state.products.deneme);
+  const dispatch = useDispatch();
   useEffect(() => {
-    getRequest({}, PRODUCTS_URLS.ALL_PRODUCTS)
-      .then(data => {
-        console.log(data.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    dispatch(getAllCategories());
   }, []);
   return (
     <View>
@@ -27,5 +21,6 @@ const Home: React.FC<Props> = ({navigation, route}) => {
     </View>
   );
 };
+
 
 export default Home;
