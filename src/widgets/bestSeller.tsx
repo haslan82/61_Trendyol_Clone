@@ -13,7 +13,7 @@ const BestSeller: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getBestSellerProducts({}));
+    dispatch(getBestSellerProducts());
   }, []);
 
   //console.log("bestSellerProducts",bestSellerProducts);

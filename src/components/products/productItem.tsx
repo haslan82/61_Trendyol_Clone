@@ -3,10 +3,16 @@ import {Text, StyleSheet, Image, Pressable} from 'react-native';
 import {ProductItemProps} from '../../models/ui/productItemProps';
 import {height, width} from '../../utils/constants';
 import {Colors} from '../../themes/colors';
+import { useNavigation } from '@react-navigation/native';
+import { PRODUCTSNAVIGATOR } from '../../utils/routes';
+import ProductDetail from '../../screens/products/productDetail';
 
 const ProductItem: React.FC<ProductItemProps> = ({product}) => {
+  const navigation = useNavigation();
   return (
-    <Pressable style={styles.container}>
+    <Pressable 
+    onPress={() => navigation.navigate(PRODUCTSNAVIGATOR.ProductDetail)}
+    style={styles.container}>
       <Image
         source={{uri: product.image}}
         style={{
@@ -34,7 +40,6 @@ const ProductItem: React.FC<ProductItemProps> = ({product}) => {
           fontWeight: 'bold',
           marginVertical: 5,
         }}>
-        
         {product.title}
       </Text>
 
@@ -46,7 +51,6 @@ const ProductItem: React.FC<ProductItemProps> = ({product}) => {
           marginVertical: 5,
           color: Colors.primary,
         }}>
-        
         {product.price}
         {' TL'}
       </Text>

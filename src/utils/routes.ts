@@ -7,3 +7,9 @@ export const TABNAVIGATOR = {
     Search: 'Ara',
 
   }
+
+  export const PRODUCTSNAVIGATOR = {
+      ProductList: 'Ürün Listesi',
+      ProductDetail: 'Ürün Detayı',
+  
+    }
