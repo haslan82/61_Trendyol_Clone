@@ -1,16 +1,13 @@
 import React, {useEffect} from 'react';
-import {Text, FlatList} from 'react-native';
+import { FlatList} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import { getAllCategories } from '../store/actions/categoriesActions';
-import { RootState } from '../store';
+import { RootState } from '../store/index';
 import CategoryItem from '../components/categories/categoryItem';
 
 
 
-interface Props {
-  navigation: any;
-  route: any;
-}
+
 
 const Categories: React.FC<Props> = ({navigation, route}) => {
   const categories = useSelector(
