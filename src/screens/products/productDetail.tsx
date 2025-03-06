@@ -1,14 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
 
 
 
 
-const ProductDetail: React.FC = () => {
+const ProductDetail: React.FC = ({route}) => {
+  const productId = route.params.productId;
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 30 }}> ProductDetail  </Text>
+     <ScrollView>
+     <Text style={{ fontSize: 30 }}> {productId}  </Text>
+     </ScrollView>
     </View>
   );
 };

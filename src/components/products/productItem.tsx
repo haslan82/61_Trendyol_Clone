@@ -11,7 +11,7 @@ const ProductItem: React.FC<ProductItemProps> = ({product}) => {
   const navigation = useNavigation();
   return (
     <Pressable 
-    onPress={() => navigation.navigate(PRODUCTSNAVIGATOR.ProductDetail)}
+    onPress={() => navigation.navigate(PRODUCTSNAVIGATOR.ProductDetail, {productId: product.id})}
     style={styles.container}>
       <Image
         source={{uri: product.image}}

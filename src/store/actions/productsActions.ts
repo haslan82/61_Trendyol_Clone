@@ -25,4 +25,7 @@ const getPopularProducts = createAsyncThunk(
   },
 );
 
+
+
+
 export {getBestSellerProducts, getPopularProducts};
