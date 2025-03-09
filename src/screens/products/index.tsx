@@ -13,7 +13,6 @@ const ProductList: React.FC = () => {
   );
 };
 
-
 const styles = StyleSheet.create({
 
 container: {
