@@ -1,14 +1,18 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet, FlatList} from 'react-native';
+import { defaultScreenStyle } from '../../styles/defaultScreenStyle';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store';
 
 
 
 
 
 const ProductList: React.FC = () => {
+  const {products} = useSelector((state: RootState) => state.products);
   return (
-    <View style={styles.container}>
-      <Text style={{ fontSize: 30 }}> ProductList  </Text>
+    <View style={defaultScreenStyle.safeAreaContainer}>
+      <FlatList data={products}/>
     </View>
   );
 };

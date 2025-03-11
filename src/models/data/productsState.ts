@@ -28,5 +28,11 @@ interface ProductsState{
 interface Params {
     id: number;
   }
+ /*  interface rating {
+   
+      count: number;
+      rate: number;
+    };
+   */
 
-export type {ProductsState, Product, Params} 
+export type {ProductsState, Product, Params,Rating} 

@@ -7,6 +7,7 @@ import {height, width} from '../../utils/constants';
 import {Colors} from '../../themes/colors';
 import Button from '../../components/ui/button';
 import { RootState } from '../../store';
+import Rate from '../../components/products/rate';
 
 const ProductDetail: React.FC<any> = ({route}) => {
   const {productId} = route.params;
@@ -26,6 +27,7 @@ const ProductDetail: React.FC<any> = ({route}) => {
           <Image source={{uri: product.image}} style={styles.image} />
           <Text style={styles.category}> {product.category} </Text>
           <Text style={styles.title}> {product.title} </Text>
+          <Rate rating={product.rating} />
           <Text style={styles.description}> {product.description} </Text>
         </ScrollView>
       </View >
@@ -53,7 +55,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginVertical: 10,
+    marginVertical: 5,
   },
   description: {
     fontSize: 16,
