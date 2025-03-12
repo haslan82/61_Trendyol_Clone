@@ -6,6 +6,9 @@ import {getBestSellerProducts} from '../store/actions/productsActions';
 import {RootState} from '../store';
 import ProductItem from '../components/products/productItem';
 
+
+
+
 const BestSeller: React.FC = () => {
   const bestSellerProducts = useSelector(
     (state: RootState) => state.products.bestSellerProducts,
@@ -21,6 +24,7 @@ const BestSeller: React.FC = () => {
   return (
     <View style={styles.container}>
       <WidgetsHeader title="Çok Satan Ürünler" />
+  
       <FlatList 
       showsHorizontalScrollIndicator={false}
       horizontal

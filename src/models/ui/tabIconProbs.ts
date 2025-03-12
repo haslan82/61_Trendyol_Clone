@@ -2,10 +2,10 @@ interface Route {
   name: string;
 }
 
-interface TabIconProbs {
+interface TabIconProps {
   focused?: boolean;
   size: number;
   color: string;
   route: Route;
 }
-export type {TabIconProbs};
+export type {TabIconProps};

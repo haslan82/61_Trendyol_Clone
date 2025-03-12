@@ -60,13 +60,14 @@ const ProductItem: React.FC<ProductItemProps> = ({product}) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: width * 0.4,
+    width: width * 0.45,
     minHeight: height * 0.3,
     borderWidth: 0.5,
     borderColor: Colors.gray,
     marginHorizontal: 5,
     padding: 5,
     borderRadius: 5,
+    margin:5
   },
 });
 

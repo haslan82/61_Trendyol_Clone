@@ -1,10 +1,11 @@
 import React from 'react';
 import Icon from '@react-native-vector-icons/ionicons';
-import {TabIconProbs} from '../../models/ui/tabIconProbs';
+
 import {TABNAVIGATOR} from '../../utils/routes';
+import { TabIconProps } from '../../models/ui/tabIconProbs';
 
 
-const TabIcon: React.FC<TabIconProbs> = ({route, size, color, focused}) => {
+const TabIcon: React.FC<TabIconProps> = ({route, size, color, focused}) => {
   switch (route.name) {
     case TABNAVIGATOR.Home:
       return <Icon name={focused ? 'home' : 'home-outline'} size={size} color={color} />;

@@ -3,6 +3,23 @@ import {getRequest} from '../../service/verbs';
 import {PRODUCTS_URLS} from '../../service/urls';
 import { Params } from '../../models/data/productsState';
 
+
+const getAllProducts = createAsyncThunk(
+  'products/getAllProducts',
+  async (params: object) => {
+    const response = await getRequest(
+      params,
+      PRODUCTS_URLS.ALL_PRODUCTS,
+     
+    );
+    console.log(response.data);
+    //console.log(response.status)
+    // console.log("products",response.data);
+    return response.data;
+  },
+);
+
+
 const getBestSellerProducts = createAsyncThunk(
   'products/getBestSellerProducts',
   async (params: object) => {
@@ -35,4 +52,6 @@ const getProductDetail = createAsyncThunk(
   },
 );
 
-export {getBestSellerProducts, getPopularProducts, getProductDetail};
+
+
+export {getBestSellerProducts, getPopularProducts, getProductDetail,getAllProducts};

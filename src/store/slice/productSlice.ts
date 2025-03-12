@@ -1,6 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {ProductsState} from '../../models/data/productsState';
-import { getBestSellerProducts, getPopularProducts, getProductDetail } from '../actions/productsActions';
+import { getAllProducts, getBestSellerProducts, getPopularProducts, getProductDetail } from '../actions/productsActions';
 
 
 const initialState: ProductsState = {
@@ -16,17 +16,17 @@ export const productSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder
-      /*  .addCase(getBestSellerProducts.pending, (state, action) => {
-         
-        }) */
+      /*  .addCase(getBestSellerProducts.pending, (state, action) => {}) */
+
+      .addCase(getAllProducts.fulfilled, (state, action) => {
+        state.bestSellerProducts = action.payload;
+      })
 
       .addCase(getBestSellerProducts.fulfilled, (state, action) => {
         state.bestSellerProducts = action.payload;
       })
 
-    /*  .addCase(getBestSellerProducts.rejected, (state, action) => {
-         
-        }); */
+    /*  .addCase(getBestSellerProducts.rejected, (state, action) => {}); */
 
 
         .addCase(getPopularProducts.fulfilled, (state, action) => {
