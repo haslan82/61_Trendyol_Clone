@@ -18,7 +18,7 @@ const ProductList: React.FC = () => {
 
   useEffect(() => {
    // console.log("ÇALIŞTI")
-    dispatch(getAllProducts());
+    dispatch(getAllProducts({category: selectedCategory}));
   }, [selectedCategory]);
 
   return (

@@ -17,7 +17,7 @@ const CategoryItem: React.FC<categoryItemProbs> = ({category}) => {
   // console.log(selectedCategory)
 
 const dispatch = useDispatch();
-console.log(selectedCategory)
+// console.log(selectedCategory)
   return (
    
       <Pressable 
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     borderRadius:50,
     marginVertical:10,
     borderColor:Colors.gray,
-    minHeight:height*0.05
+    maxHeight:height*0.05
   },
   selectedContainer:{
     backgroundColor:Colors.primary

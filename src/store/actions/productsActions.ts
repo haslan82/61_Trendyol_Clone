@@ -1,15 +1,21 @@
+import { PRODUCTS_URLS } from './../../service/urls';
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {getRequest} from '../../service/verbs';
-import {PRODUCTS_URLS} from '../../service/urls';
 import { Params } from '../../models/data/productsState';
 
 
 const getAllProducts = createAsyncThunk(
   'products/getAllProducts',
   async (params: object) => {
+    //console.log(params);
+
+const productUrl = params.category == "Tümü" ? PRODUCTS_URLS.ALL_PRODUCTS : `${PRODUCTS_URLS.CATEGORY_PRODUCTS}/${params.category}`
+
+    // console.log(productUrl)
+
     const response = await getRequest(
       params,
-      PRODUCTS_URLS.ALL_PRODUCTS,
+      productUrl
      
     );
     //console.log(response.data);

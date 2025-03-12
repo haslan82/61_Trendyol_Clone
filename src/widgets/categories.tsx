@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { FlatList} from 'react-native';
+import { FlatList, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import { getAllCategories } from '../store/actions/categoriesActions';
 import { RootState } from '../store/index';
@@ -21,13 +21,15 @@ const Categories: React.FC<Props> = ({navigation, route}) => {
 
   return (
     
-    <FlatList 
+ <View>
+     <FlatList 
     showsHorizontalScrollIndicator={false} // yatay çizgi gizleme
     horizontal
     data={categories}
     renderItem={({item}) =>
          <CategoryItem category={item} />
 }/>
+ </View>
    
   );
 };
