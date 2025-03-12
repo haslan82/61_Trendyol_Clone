@@ -12,7 +12,7 @@ const getAllProducts = createAsyncThunk(
       PRODUCTS_URLS.ALL_PRODUCTS,
      
     );
-    console.log(response.data);
+    //console.log(response.data);
     //console.log(response.status)
     // console.log("products",response.data);
     return response.data;

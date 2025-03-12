@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../../store';
 import ProductItem from '../../components/products/productItem';
 import {getAllProducts} from '../../store/actions/productsActions';
+import Categories from '../../widgets/categories';
 
 const ProductList: React.FC = () => {
   const {products} = useSelector((state: RootState) => state.products);
@@ -17,6 +18,7 @@ const ProductList: React.FC = () => {
 
   return (
     <View style={defaultScreenStyle.container}>
+    <Categories/>
       <FlatList
         contentContainerStyle={{alignItems: 'center'}}
         showsVerticalScrollIndicator={false}

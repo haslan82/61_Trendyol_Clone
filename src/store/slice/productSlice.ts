@@ -19,7 +19,7 @@ export const productSlice = createSlice({
       /*  .addCase(getBestSellerProducts.pending, (state, action) => {}) */
 
       .addCase(getAllProducts.fulfilled, (state, action) => {
-        state.bestSellerProducts = action.payload;
+        state.products = action.payload;
       })
 
       .addCase(getBestSellerProducts.fulfilled, (state, action) => {

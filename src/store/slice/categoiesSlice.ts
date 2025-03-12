@@ -4,6 +4,7 @@ import {getAllCategories} from '../actions/categoriesActions';
 
 const initialState: CategoriesState = {
   categories: [],
+  selectedCategory: 'Tümü',
   pending: false,
   error: null,
 };
@@ -11,7 +12,11 @@ const initialState: CategoriesState = {
 export const categoriesSlice = createSlice({
   name: 'categories',
   initialState,
-  reducers: {},
+  reducers: {
+    setSelectedCategory: (state, action) => {
+      state.selectedCategory = action.payload;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(getAllCategories.pending, (state, action) => {
@@ -25,8 +30,9 @@ export const categoriesSlice = createSlice({
 
       .addCase(getAllCategories.rejected, (state, action) => {
         state.pending = false;
-    state.error = action.error.message;
+        state.error = action.error.message;
       });
   },
 });
+export const {setSelectedCategory} = categoriesSlice.actions;
 export default categoriesSlice.reducer;
