@@ -8,6 +8,7 @@ import {Colors} from '../../themes/colors';
 import Button from '../../components/ui/button';
 import { RootState } from '../../store';
 import Rate from '../../components/products/rate';
+import FavoritesButton from '../../components/favorites/favoritesButton';
 
 const ProductDetail: React.FC<any> = ({route}) => {
   const {productId} = route.params;
@@ -24,10 +25,11 @@ const ProductDetail: React.FC<any> = ({route}) => {
         <ScrollView
         ////showsHorizontalScrollIndicator={false}
         >
+          <FavoritesButton product={product}/>
           <Image source={{uri: product?.image}} style={styles.image} />
           <Text style={styles.category}> {product?.category} </Text>
           <Text style={styles.title}> {product?.title} </Text>
-          {product.rating && <Rate rating={product.rating} />}
+          {product.rating && <Rate size="large" rating={product.rating} />}
           <Text style={styles.description}> {product?.description} </Text>
         </ScrollView>
       </View >

@@ -7,6 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 import { PRODUCTSNAVIGATOR } from '../../utils/routes';
 import ProductDetail from '../../screens/products/productDetail';
 import FavoritesButton from '../favorites/favoritesButton';
+import Rate from './rate';
 
 const ProductItem: React.FC<ProductItemProps> = ({product}) => {
   const navigation = useNavigation();
@@ -14,6 +15,7 @@ const ProductItem: React.FC<ProductItemProps> = ({product}) => {
     <Pressable 
     onPress={() => navigation.navigate(PRODUCTSNAVIGATOR.ProductDetail, {productId: product.id})}
     style={styles.container}>
+      <FavoritesButton product={product}/>
       <Image
         source={{uri: product.image}}
         style={{
@@ -23,18 +25,7 @@ const ProductItem: React.FC<ProductItemProps> = ({product}) => {
           alignSelf: 'center', // alignItems tan farklı olduğunu unutma (alignself)
         }}
       />
-      <FavoritesButton/>
-      <Text
-        style={{
-          fontSize: 18,
-          marginTop: 10,
-          marginVertical: 5,
-          color: Colors.gray,
-        }}>
-        {' '}
-        {product.category}
-      </Text>
-      <Text
+       <Text
         numberOfLines={2}
         style={{
           fontSize: 14,
@@ -44,6 +35,18 @@ const ProductItem: React.FC<ProductItemProps> = ({product}) => {
         }}>
         {product.title}
       </Text>
+      <Text
+        style={{
+          fontSize: 18,
+          marginTop: 10,
+          marginVertical: 5,
+          color: Colors.green,
+        }}>
+        {' '}
+        {product.category}
+      </Text>
+      {product.rating && <Rate rating={product.rating} />}
+     
 
       <Text
         style={{

@@ -11,6 +11,7 @@ interface Product{
     category:string;
     image:string;
     rating:Rating;
+    isFavorite:boolean;
 
 }
 
