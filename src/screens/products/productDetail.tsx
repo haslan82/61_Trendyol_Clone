@@ -12,6 +12,7 @@ import FavoritesButton from '../../components/favorites/favoritesButton';
 import FreeCargo from '../../components/badges/freeCargo';
 import Discount from '../../components/badges/discount';
 import Delivery from '../../components/badges/Delivery';
+import { addCart } from '../../store/slice/cartSlice';
 
 const ProductDetail: React.FC<any> = ({route}) => {
   const {productId} = route.params;
@@ -47,7 +48,7 @@ const ProductDetail: React.FC<any> = ({route}) => {
       <Text style={styles.info}> Kargo Bedava </Text>
       </View >
       <View style={{flex:2, justifyContent: 'center'}}>
-      <Button/>
+      <Button onPress={()=>dispatch(addCart(product))} />
     
       </View>
       </View>

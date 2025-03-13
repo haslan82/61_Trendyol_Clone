@@ -1,14 +1,34 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store';
+import CartItem from '../../components/cart/cartItem';
 
-interface Props {}
 
-const Cart: React.FC<Props> = () => {
+
+
+
+
+
+
+const Cart: React.FC = ({}) => {
+  const {cart}= useSelector((state: RootState) => state.cart);
+  console.log(cart);
   return (
-    <View>
-      <Text>Cart</Text>
+    <View style={styles.container}>
+      <FlatList  data={cart} renderItem={((item)=><CartItem/>)}/>
     </View>
   );
 };
+
+
+const styles = StyleSheet.create({
+
+container: {
+alignItems: 'center',
+flex: 1,
+justifyContent: 'center'
+ }
+});
 
 export default Cart;

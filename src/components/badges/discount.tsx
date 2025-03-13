@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Colors } from '../../themes/colors';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { width } from '../../utils/constants';
 
 
 
@@ -9,8 +10,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 const Discount: React.FC = ({ }) => {
   return (
     <View style={styles.container}>
-     <Icon name="cube-sharp" size={16} color={Colors.primary} />
-     <Text style={styles.text}>2. Ürün İndirim</Text>
+     <Icon name="pricetag" size={16} color={Colors.primary} />
+     <Text style={styles.text}>2. Ürün İndirimi</Text>
     </View>
   );
 };
@@ -22,7 +23,7 @@ container: {
 alignItems: 'center',
 backgroundColor:Colors.primary1,
 justifyContent: 'center',
-width:"25%",
+width:width*0.12,
 margin:5,
 paddingVertical:5,
 borderRadius:5

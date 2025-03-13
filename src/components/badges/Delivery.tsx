@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Colors } from '../../themes/colors';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { width } from '../../utils/constants';
 
 
 
@@ -22,7 +23,7 @@ container: {
 alignItems: 'center',
 backgroundColor:Colors.primary1,
 justifyContent: 'center',
-width:"25%",
+width:width*0.12,
 margin:5,
 paddingVertical:5,
 borderRadius:5
