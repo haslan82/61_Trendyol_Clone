@@ -20,6 +20,8 @@ interface ProductsState{
     bestSellerProducts:Product[];
     popularProducts:Product[];
     product:Product;
+    pending:boolean;
+    error:any;
     
 
 }

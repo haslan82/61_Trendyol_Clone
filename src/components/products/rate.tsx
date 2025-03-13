@@ -2,7 +2,9 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {Colors} from '../../themes/colors';
 import Icon from '@react-native-vector-icons/ionicons';
+// import Icon from 'react-native-vector-icons/Ionicons'
 import {RatingProps} from '../../models/ui/rateProps';
+
 
 const Rate: React.FC<RatingProps> = ({rating}) => {
   const fullStar = Math.floor(rating?.rate || 0);

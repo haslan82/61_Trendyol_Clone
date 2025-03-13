@@ -6,6 +6,7 @@ import {Colors} from '../../themes/colors';
 import { useNavigation } from '@react-navigation/native';
 import { PRODUCTSNAVIGATOR } from '../../utils/routes';
 import ProductDetail from '../../screens/products/productDetail';
+import FavoritesButton from '../favorites/favoritesButton';
 
 const ProductItem: React.FC<ProductItemProps> = ({product}) => {
   const navigation = useNavigation();
@@ -22,6 +23,7 @@ const ProductItem: React.FC<ProductItemProps> = ({product}) => {
           alignSelf: 'center', // alignItems tan farklı olduğunu unutma (alignself)
         }}
       />
+      <FavoritesButton/>
       <Text
         style={{
           fontSize: 18,

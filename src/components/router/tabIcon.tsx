@@ -1,8 +1,8 @@
 import React from 'react';
-import Icon from '@react-native-vector-icons/ionicons';
-
 import {TABNAVIGATOR} from '../../utils/routes';
 import { TabIconProps } from '../../models/ui/tabIconProbs';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 
 
 const TabIcon: React.FC<TabIconProps> = ({route, size, color, focused}) => {
