@@ -9,6 +9,9 @@ import Button from '../../components/ui/button';
 import { RootState } from '../../store';
 import Rate from '../../components/products/rate';
 import FavoritesButton from '../../components/favorites/favoritesButton';
+import FreeCargo from '../../components/badges/freeCargo';
+import Discount from '../../components/badges/discount';
+import Delivery from '../../components/badges/Delivery';
 
 const ProductDetail: React.FC<any> = ({route}) => {
   const {productId} = route.params;
@@ -31,6 +34,11 @@ const ProductDetail: React.FC<any> = ({route}) => {
           <Text style={styles.title}> {product?.title} </Text>
           {product.rating && <Rate size="large" rating={product.rating} />}
           <Text style={styles.description}> {product?.description} </Text>
+          <View style={{flexDirection:"row"}}> 
+      <FreeCargo/>
+     <Discount/>
+     <Delivery/>
+     </View>
         </ScrollView>
       </View >
       <View style={styles.priceContainer}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, StyleSheet, Image, Pressable} from 'react-native';
+import {Text, StyleSheet, Image, Pressable, View} from 'react-native';
 import {ProductItemProps} from '../../models/ui/productItemProps';
 import {height, width} from '../../utils/constants';
 import {Colors} from '../../themes/colors';
@@ -8,6 +8,9 @@ import { PRODUCTSNAVIGATOR } from '../../utils/routes';
 import ProductDetail from '../../screens/products/productDetail';
 import FavoritesButton from '../favorites/favoritesButton';
 import Rate from './rate';
+import FreeCargo from '../badges/freeCargo';
+import Discount from '../badges/discount';
+import Delivery from '../badges/Delivery';
 
 const ProductItem: React.FC<ProductItemProps> = ({product}) => {
   const navigation = useNavigation();
@@ -59,6 +62,11 @@ const ProductItem: React.FC<ProductItemProps> = ({product}) => {
         {product.price}
         {' TL'}
       </Text>
+     <View style={{flexDirection:"row"}}> 
+      <FreeCargo/>
+     <Discount/>
+     <Delivery/>
+     </View>
     </Pressable>
   );
 };
