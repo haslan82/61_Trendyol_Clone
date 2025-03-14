@@ -2,15 +2,17 @@ import React from 'react';
 import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Colors } from '../../themes/colors';
 import { height } from '../../utils/constants';
+import { ButtonProps } from '../../models/ui/buttonProps';
 
 
 
 
 
-const Button: React.FC<Props> = props => {
+const Button: React.FC<ButtonProps> = props => {
+  const {title}=props;
   return (
     <TouchableOpacity {...props} style={styles.container}>
-      <Text style={styles.text}> Sepete Ekle  </Text>
+      <Text style={styles.text}>  {title} </Text>
     </TouchableOpacity>
   );
 };
