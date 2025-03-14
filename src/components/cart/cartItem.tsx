@@ -1,51 +1,84 @@
 import React from 'react';
-import {Text, StyleSheet, Pressable, Image, View } from 'react-native';
-import { CartItemProps } from '../../models/ui/cartItemProps';
-import { height, width } from '../../utils/constants';
+import {Text, StyleSheet, Pressable, Image, View} from 'react-native';
+import {CartItemProps} from '../../models/ui/cartItemProps';
+import {height, width} from '../../utils/constants';
+import {Colors} from '../../themes/colors';
+import Delivery from '../badges/Delivery';
+import FreeCargo from '../badges/freeCargo';
+import Discount from '../badges/discount';
+import { useNavigation } from '@react-navigation/native';
+import { PRODUCTSNAVIGATOR } from '../../utils/routes';
 
+type Props = {};
 
-type Props = {} ;
-
-
-const CartItem: React.FC<CartItemProps> = ({ product}) => {
+const CartItem: React.FC<CartItemProps> = ({product}) => {
   //console.ePressableog(product)
+  const navigation = useNavigation();
+
+  //console.log(product)
   return (
-    <Pressable style={styles.container}>
-     <View style={{}}>
-    
-      <Image
-        source={{uri: product.image}}
-        style={{
-          width: width * 0.3,
-          height: height * 0.2,
-          resizeMode: 'contain',
-          alignSelf: 'center', // alignItems tan farklı olduğunu unutma (alignself)
-        }}
-      />
-     </View>
-
-     
-     <View>
-
-      <View>
-      <Text style={{ fontSize: 30 }}> {product?.title}</Text>
+    <Pressable 
+    onPress={() => navigation.navigate(PRODUCTSNAVIGATOR.ProductDetail, {productId: product.id})}
+    style={styles.container}>
+      <View style={{justifyContent: 'center', alignItems: 'center'}}>
+        <Image source={{uri: product.image}} style={styles.image} />
       </View>
 
-      <View>
-      <Text style={{ fontSize: 30 }}> {product?.title}</Text>
-      </View>
+      <View style={{flex: 1, paddingHorizontal: 10}}>
+        <View>
+          <Text style={styles.title}> {product?.title}</Text>
+        </View>
 
-     </View>
+        <View style={{flexDirection: 'row', marginVertical: 10}}>
+          <Delivery />
+          <FreeCargo />
+          <Discount />
+        </View>
+
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <View>
+            <Text style={styles.quantity}> {product?.quantity} </Text>
+          </View>
+
+          <View>
+            <Text style={styles.price}> {product?.price} TL </Text>
+          </View>
+        </View>
+      </View>
     </Pressable>
   );
 };
 
-
 const styles = StyleSheet.create({
-
-container: {
-flexDirection:"row",
- }
+  container: {
+    flexDirection: 'row',
+    padding: 5,
+    borderBottomWidth: 0.5,
+    borderColor: Colors.gray,
+    paddingVertical: 10,
+  },
+  image: {
+    width: width * 0.2,
+    height: height * 0.1,
+    resizeMode: 'contain',
+    alignSelf: 'center', // alignItems tan farklı olduğunu unutma (alignself)
+  },
+  price: {
+    fontSize: 16,
+    marginVertical: 5,
+    fontWeight: 'bold',
+    color: Colors.primary,
+  },
+  quantity: {
+    fontSize: 16,
+    marginVertical: 5,
+    color: Colors.primary,
+  },
+  title: {
+    fontSize: 16,
+    marginVertical: 5,
+    fontWeight: '500',
+  },
 });
 
 export default CartItem;
