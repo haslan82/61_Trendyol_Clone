@@ -8,13 +8,13 @@ const Counter: React.FC<CounterProps> = ({ quantity }) => {
     return (
         <View style={styles.container}>
             <TouchableOpacity>
-                <Icon name="minus" size={20} color={Colors.primary} />
+                <Icon name="minus" size={20} color={Colors.black} />
             </TouchableOpacity>
             <View style={styles.quantityContainer}>
                 <Text style={styles.quantity}> {quantity} </Text>
             </View>
             <TouchableOpacity>
-                <Icon name="plus" size={20} color={Colors.primary} />
+                <Icon name="plus" size={20} color={Colors.black} />
             </TouchableOpacity>
         </View>
     );
@@ -28,6 +28,8 @@ const styles = StyleSheet.create({
         borderColor: Colors.gray,
         borderRadius: 100,
         flexDirection: 'row',
+        paddingHorizontal: 10,
+        paddingVertical: 5,
     },
     quantityContainer: {
         width: 30,
@@ -36,6 +38,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.primary1,
         alignItems: 'center',
         justifyContent: 'center',
+        marginHorizontal: 7
     },
     quantity: {
         fontSize: 18,
