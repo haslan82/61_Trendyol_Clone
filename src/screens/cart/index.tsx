@@ -13,10 +13,10 @@ import CartItem from '../../components/cart/cartItem';
 
 const Cart: React.FC = ({}) => {
   const {cart}= useSelector((state: RootState) => state.cart);
-  console.log(cart);
+ // console.log(cart);
   return (
     <View style={styles.container}>
-      <FlatList  data={cart} renderItem={((item)=><CartItem/>)}/>
+      <FlatList  data={cart} renderItem={({item})=><CartItem product={item} />}/>
     </View>
   );
 };
