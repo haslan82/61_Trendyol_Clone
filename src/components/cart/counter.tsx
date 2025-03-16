@@ -20,6 +20,7 @@ const Counter: React.FC<CounterProps> = ({ quantity }) => {
     );
 };
 
+
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
