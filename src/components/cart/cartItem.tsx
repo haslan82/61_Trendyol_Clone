@@ -38,7 +38,7 @@ const CartItem: React.FC<CartItemProps> = ({product}) => {
 
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <View>
-           <Counter quantity={product?.quantity}/>
+           <Counter product={product}  quantity={product?.quantity}/>
           </View>
 
           <View>

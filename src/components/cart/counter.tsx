@@ -4,23 +4,26 @@ import { CounterProps } from '../../models/ui/counterProps';
 import { Colors } from '../../themes/colors';
 import Icon from '@react-native-vector-icons/feather';
 import { useDispatch } from 'react-redux';
-import { updateQuantity } from '../../store/slice/cartSlice';
+import { decreaseQuantity, increaseQuantity } from '../../store/slice/cartSlice';
 
-const Counter: React.FC<CounterProps> = ({ quantity,product }) => {
+
+const Counter: React.FC<CounterProps> = ({ quantity,product}) => {
     const dispatch = useDispatch();
     // const decreaseQuantity = () => dispatch({ type: 'DECREASE_QUANTITY' });
     // const increaseQuantity = () => dispatch({ type: 'INCREASE_QUANTITY' });
     return (
         <View style={styles.container}>
             <TouchableOpacity
-            onPress={()=>dispatch(updateQuantity(product))}
+            onPress={()=>dispatch(decreaseQuantity(product))}
             >
                 <Icon name="minus" size={20} color={Colors.black} />
             </TouchableOpacity>
             <View style={styles.quantityContainer}>
                 <Text style={styles.quantity}> {quantity} </Text>
             </View>
-            <TouchableOpacity>
+            <TouchableOpacity
+            onPress={()=>dispatch(increaseQuantity(product))}
+            >
                 <Icon name="plus" size={20} color={Colors.black} />
             </TouchableOpacity>
         </View>

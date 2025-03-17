@@ -16,7 +16,7 @@ const Cart: React.FC = ({}) => {
   return (
     <View style={defaultScreenStyle.container}>
       <FlatList
-      ListEmptyComponent={<Text style={{textAlign:"center", fontSize:24, textAlignVertical:"center", height:"100%", marginTop:50}}>Henüz Sepete Ürün Eklemediniz !</Text>}
+      ListEmptyComponent={<Text style={{textAlign:"center", fontSize:24, textAlignVertical:"center", height:"100%", marginTop:50}}>Sepetinize Ürün Ekleyiniz !</Text>}
         showsVerticalScrollIndicator={false}
         data={cart}
         renderItem={({item}) => <CartItem product={item} />}
