@@ -21,7 +21,16 @@ export const cartSlice = createSlice({
       state.totalPrice += product.price;
    // state.totalPrice = state.cart.reduce((sum,item)=>sum+item.price*item.quantity,0)
     },
+   updateQuantity:(state,action)=>{
+     const {id, quantity} = action.payload;
+     const item = state.cart.find(item=> item.id === id)
+     if(item){
+       item.quantity = quantity>0? quantity : 1;
+
+       state.totalPrice = state.cart.reduce((sum,item)=>sum+item.price*item.quantity,0)
+     }
+   }
   },
 });
-export const {addCart} =cartSlice.actions;
+export const {addCart, updateQuantity} =cartSlice.actions;
 export default cartSlice.reducer;
