@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, StyleSheet, Pressable, Image, View} from 'react-native';
+import {Text, StyleSheet, Pressable, Image, View, TouchableOpacity} from 'react-native';
 import {CartItemProps} from '../../models/ui/cartItemProps';
 import {height, width} from '../../utils/constants';
 import {Colors} from '../../themes/colors';
@@ -9,13 +9,18 @@ import Discount from '../badges/discount';
 import { useNavigation } from '@react-navigation/native';
 import { PRODUCTSNAVIGATOR } from '../../utils/routes';
 import Counter from './counter';
+import Icon from 'react-native-vector-icons/Ionicons';
+
+import { removeFromCart } from '../../store/slice/cartSlice';
+import { useDispatch } from 'react-redux';
+
 
 type Props = {};
 
 const CartItem: React.FC<CartItemProps> = ({product}) => {
   //console.ePressableog(product)
   const navigation = useNavigation();
-
+const dispatch = useDispatch();
   //console.log(product)
   return (
     <Pressable 
@@ -45,6 +50,11 @@ const CartItem: React.FC<CartItemProps> = ({product}) => {
             <Text style={styles.price}> {product?.price} TL </Text>
           </View>
         </View>
+        <TouchableOpacity 
+        onPress={()=>dispatch(removeFromCart(product.id))}
+        style={{ alignSelf: 'flex-end', marginVertical: 5}}>
+         <Icon name="trash" size={25} color={Colors.primary} />
+        </TouchableOpacity>
       </View>
     </Pressable>
   );
