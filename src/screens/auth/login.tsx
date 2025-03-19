@@ -18,7 +18,7 @@ const Login: React.FC = () => {
                     <Input title='E-posta' />
                     <Input title='Şifre' />
                     <Text style={styles.forgot}>Şifremi Unuttum</Text>
-                    <View style={{ marginTop: height * 0.08 }}>
+                    <View style={{ marginTop: height * 0.05}}>
                        
                         <Button title='Giriş Yap' />
                     </View>
@@ -28,7 +28,6 @@ const Login: React.FC = () => {
         </View>
     );
 };
-
 
 const styles = StyleSheet.create({
 
