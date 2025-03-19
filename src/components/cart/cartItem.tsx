@@ -6,19 +6,19 @@ import {Colors} from '../../themes/colors';
 import Delivery from '../badges/Delivery';
 import FreeCargo from '../badges/freeCargo';
 import Discount from '../badges/discount';
-import { useNavigation } from '@react-navigation/native';
-import { PRODUCTSNAVIGATOR } from '../../utils/routes';
+
 import Counter from './counter';
 import Icon from 'react-native-vector-icons/Ionicons';
-
 import { removeFromCart } from '../../store/slice/cartSlice';
 import { useDispatch } from 'react-redux';
+import { useNavigation } from '@react-navigation/native';
+import { PRODUCTSNAVIGATOR } from '../../utils/routes';
 
 
 type Props = {};
 
 const CartItem: React.FC<CartItemProps> = ({product}) => {
-  //console.ePressableog(product)
+  //console.log(product)
   const navigation = useNavigation();
 const dispatch = useDispatch();
   //console.log(product)

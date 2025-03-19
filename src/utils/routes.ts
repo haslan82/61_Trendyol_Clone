@@ -13,3 +13,9 @@ export const TABNAVIGATOR = {
       ProductDetail: 'Ürün Detayı',
   
     }
+
+    export const AUTHNAVIGATOR = {
+      Login: 'Giriş Yap',
+      Register: 'Kayıt Ol',
+  
+    }

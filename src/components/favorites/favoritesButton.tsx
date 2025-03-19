@@ -1,15 +1,34 @@
 import React from 'react';
-import {StyleSheet, TouchableOpacity} from 'react-native';
+import { Alert, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Colors} from '../../themes/colors';
 import {width} from '../../utils/constants';
 import {ProductItemProps} from '../../models/ui/productItemProps';
+import { RootState } from '../../store';
+import { useSelector } from 'react-redux';
 
 
 
 const FavoritesButton: React.FC<ProductItemProps> = ({product}) => {
+  const {isLogin} = useSelector((state:RootState) => state.auth);
+  const checkLogin = ()=>{
+    if (!isLogin) {
+      // navigate to login screen
+      // navigation.navigate('Login');
+      Alert.alert('Giriş Yapınız', 'Favoriye eklemek için giriş yapınız', [
+        {
+          text: 'İptal',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+        {text: 'Giriş Yap', onPress: () => console.log('OK Pressed')},
+      ]);
+    }
+  }
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+    onPress={checkLogin}
+    style={styles.container}>
       <Icon
         name={product.isFavorite ? 'heart' : 'heart-outline'}
         size={20}
