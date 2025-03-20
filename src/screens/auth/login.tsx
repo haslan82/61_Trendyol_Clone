@@ -5,6 +5,7 @@ import Input from '../../components/ui/input';
 import Button from '../../components/ui/button';
 import { height } from '../../utils/constants';
 import { Colors } from '../../themes/colors';
+import { Formik } from 'formik';
 
 
 
@@ -14,15 +15,26 @@ const Login: React.FC = () => {
     return (
         <View style={defaultScreenStyle.safeAreaContainer}>
             <ScrollView>
-                <View style={defaultScreenStyle.container}>
-                    <Input title='E-posta' />
-                    <Input title='Şifre' />
-                    <Text style={styles.forgot}>Şifremi Unuttum</Text>
-                    <View style={{ marginTop: height * 0.05}}>
-                       
-                        <Button title='Giriş Yap' />
-                    </View>
-                </View>
+
+            <Formik
+     initialValues={{ email: '' }}
+     onSubmit={values => console.log(values)}
+   >
+     {({ handleChange, handleBlur, handleSubmit, values }) => (
+       <View style={defaultScreenStyle.container}>
+       <Input title='E-posta' />
+       <Input title='Şifre' />
+       <Text style={styles.forgot}>Şifremi Unuttum</Text>
+       <View style={{ marginTop: height * 0.05}}>
+          
+           <Button title='Giriş Yap' />
+       </View>
+   </View>
+     )}
+   </Formik>
+
+
+                
             </ScrollView>
 
         </View>
