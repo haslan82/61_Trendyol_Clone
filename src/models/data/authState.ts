@@ -1,10 +1,4 @@
-interface AuthState {
-   isLogin: boolean;
-   user:User | null;
-   pending: boolean;
-   error: any;
 
-  }
   interface User {
     name: string;
     email: string;
@@ -13,5 +7,12 @@ interface AuthState {
     id: number;
     
   }
-  
+  interface AuthState {
+    isLogin: boolean;
+    user:User | null;
+    pending: boolean;
+    error: any;
+    token: string | null
+ 
+   }
   export type {AuthState,User};

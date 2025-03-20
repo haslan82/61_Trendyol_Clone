@@ -15,7 +15,21 @@ const initialState: ProductsState = {
 export const productSlice = createSlice({
   name: 'products',
   initialState,
-  reducers: {},
+  reducers: {
+    addFavoriteOther: (state, action) => {
+      const product = action.payload;
+      const exitingProduct = state.bestSellerProducts.find(item => item.id === product.id);
+      if (exitingProduct) {
+        exitingProduct.isFavorite=!exitingProduct.isFavorite;
+        // state.bestSellerProducts = state.bestSellerProducts.filter(item => item.id !== action.payload.id);
+      }  // else {
+      //    state.bestSellerProducts.push({...product, isFavorite: true});
+        
+      // } 
+      console.log( exitingProduct)
+    }
+  
+  },
   extraReducers: builder => {
     builder
       /*  .addCase(getBestSellerProducts.pending, (state, action) => {}) */
@@ -56,4 +70,5 @@ export const productSlice = createSlice({
 
   },
 });
+export const {addFavoriteOther} = productSlice.actions;
 export default productSlice.reducer;

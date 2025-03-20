@@ -20,8 +20,8 @@ const Login: React.FC = () => {
      const dispatch = useDispatch<AppDispatch>();
 
     const initialValues: LoginForm = {
-        username: 'jhon_doe',
-        password: 'pass123'
+        username: 'johnd',
+        password: 'm38rmF$'
     }
 
   

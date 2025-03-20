@@ -6,12 +6,13 @@ const userLogin = createAsyncThunk('auth/userLogin', async (params: object) => {
    // console.log(params)
    try {
       const response = await postRequest(params, AUTH_URLS.LOGIN);
-//console.log(response.data) 
+      //console.log(response.data) 
  return response.data;
 
    } catch (error) {
-    console.log('error: ' + JSON.stringify(error))
+  //  console.log('error: ' + JSON.stringify(error))
     //console.log('error: ' + (error))
+    return error;
    }
 
 

@@ -5,11 +5,16 @@ import {Colors} from '../../themes/colors';
 import {width} from '../../utils/constants';
 import {ProductItemProps} from '../../models/ui/productItemProps';
 import { RootState } from '../../store';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { AUTHNAVIGATOR } from '../../utils/routes';
+import { useNavigation } from '@react-navigation/native';
+import { addFavorite } from '../../store/slice/favoriteSlice';
 
 
 
 const FavoritesButton: React.FC<ProductItemProps> = ({product}) => {
+  const navigation= useNavigation();
+  const dispatch = useDispatch();
   const {isLogin} = useSelector((state:RootState) => state.auth);
   const checkLogin = ()=>{
     if (!isLogin) {
@@ -21,8 +26,12 @@ const FavoritesButton: React.FC<ProductItemProps> = ({product}) => {
           onPress: () => console.log('Cancel Pressed'),
           style: 'cancel',
         },
-        {text: 'Giriş Yap', onPress: () => console.log('OK Pressed')},
+        {text: 'Giriş Yap', onPress: () => navigation.navigate(AUTHNAVIGATOR.Login)},
       ]);
+    }
+    else {
+      dispatch(addFavorite(product));
+      //Alert.alert('Favorilere Eklendi', product.title +'başarıyla eklendi');
     }
   }
   return (
