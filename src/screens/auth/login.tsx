@@ -6,35 +6,57 @@ import Button from '../../components/ui/button';
 import { height } from '../../utils/constants';
 import { Colors } from '../../themes/colors';
 import { Formik } from 'formik';
+import { LoginForm } from '../../models/ui/loginForm';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../store';
+import { userLogin } from '../../store/actions/authAction';
 
 
 
 
 
 const Login: React.FC = () => {
+
+     const dispatch = useDispatch<AppDispatch>();
+
+    const initialValues: LoginForm = {
+        username: 'jhon_doe',
+        password: 'pass123'
+    }
+
+  
     return (
         <View style={defaultScreenStyle.safeAreaContainer}>
             <ScrollView>
 
-            <Formik
-     initialValues={{ email: '' }}
-     onSubmit={values => console.log(values)}
-   >
-     {({ handleChange, handleBlur, handleSubmit, values }) => (
-       <View style={defaultScreenStyle.container}>
-       <Input title='E-posta' />
-       <Input title='Şifre' />
-       <Text style={styles.forgot}>Şifremi Unuttum</Text>
-       <View style={{ marginTop: height * 0.05}}>
-          
-           <Button title='Giriş Yap' />
-       </View>
-   </View>
-     )}
-   </Formik>
+                <Formik
+                    initialValues={initialValues}
+                    onSubmit={values => dispatch(userLogin(values))}
+                >
+                    {({ handleChange, handleBlur, handleSubmit, values }) => (
+                        <View style={defaultScreenStyle.container}>
+                            <Input
+                                onChangeText={handleChange('email')}
+                                onBlur={handleBlur('email')}
+                                value={values.username} title='Kullanıcı Adı' />
+                            <Input
+                                onChangeText={handleChange('password')}
+                                onBlur={handleBlur('password')}
+                                value={values.password} title='Şifre'
+                                secureTextEntry
+                            />
+
+                            <Text style={styles.forgot}>Şifremi Unuttum</Text>
+                            <View style={{ marginTop: height * 0.05 }}>
+
+                                <Button onPress={handleSubmit} title='Giriş Yap' />
+                            </View>
+                        </View>
+                    )}
+                </Formik>
 
 
-                
+
             </ScrollView>
 
         </View>
