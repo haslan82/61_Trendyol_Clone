@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, SafeAreaView, FlatList } from 'react-native';
+import { View, SafeAreaView, FlatList, StyleSheet } from 'react-native';
 import { defaultScreenStyle } from '../../styles/defaultScreenStyle';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
@@ -24,5 +24,10 @@ const Favorites: React.FC = () => {
     </SafeAreaView>
   );
 };
-
+const styles=StyleSheet.create({
+  container: {
+    flex:1,
+   
+  },
+})
 export default Favorites;

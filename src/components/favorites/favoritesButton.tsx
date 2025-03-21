@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AUTHNAVIGATOR } from '../../utils/routes';
 import { useNavigation } from '@react-navigation/native';
 import { addFavorite } from '../../store/slice/favoriteSlice';
+import { addFavoriteOther } from '../../store/slice/productSlice';
 
 
 
@@ -32,6 +33,7 @@ const FavoritesButton: React.FC<ProductItemProps> = ({product}) => {
     else {
       dispatch(addFavorite(product));
       //Alert.alert('Favorilere Eklendi', product.title +'başarıyla eklendi');
+      dispatch(addFavoriteOther(product));
     }
   }
   return (

@@ -9,9 +9,15 @@ import { ButtonProps } from '../../models/ui/buttonProps';
 
 
 const Button: React.FC<ButtonProps> = props => {
-  const {title}=props;
+  const { title, disabled, onPress } = props;
   return (
-    <TouchableOpacity {...props} style={styles.container}>
+    <TouchableOpacity 
+    onPress={onPress} 
+    {...props} 
+    style={[styles.container, {
+    opacity: disabled ? 0.5 : 1
+      //backgroundColor: disabled ? Colors.gray : Colors.primary
+    }]}>
       <Text style={styles.text}>  {title} </Text>
     </TouchableOpacity>
   );
@@ -20,20 +26,20 @@ const Button: React.FC<ButtonProps> = props => {
 
 const styles = StyleSheet.create({
 
-container: {
-alignItems: 'center',
-justifyContent: 'center',
-backgroundColor: Colors.primary,
-minHeight: height * 0.05,
-borderRadius: 10,
-paddingVertical: 10,
-paddingHorizontal: 20,
-},
-text:{
+  container: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: Colors.primary,
+    minHeight: height * 0.05,
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+  },
+  text: {
     fontSize: 18,
     color: Colors.white,
     fontWeight: 'bold',
-}
- });
+  }
+});
 
 export default Button;
