@@ -7,14 +7,19 @@ import ProductDetail from '../screens/products/productDetail';
 import { Colors } from '../themes/colors';
 import Login from '../screens/auth/login';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useDispatch } from 'react-redux';
+import { checkUser } from '../store/slice/authSlice';
 
 const Stack = createNativeStackNavigator();
 
 const RootNavigator: React.FC = () => {
-
+const dispatch = useDispatch();
 const getState = async() => {
   const token = await AsyncStorage.getItem('token');
-   console.log("KAYDEDİLEN TOKEN =>",token)
+   //console.log("KAYDEDİLEN TOKEN =>",token)
+  if(token){
+    dispatch(checkUser(token))
+}
 }
 useEffect(() => {
   getState()
