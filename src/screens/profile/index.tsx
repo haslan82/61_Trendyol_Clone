@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { getUserInfo } from '../../store/actions/userActions';
+import Avatar from '../../components/user/avatar';
 
 interface Props { }
 
@@ -14,9 +15,12 @@ const Profile: React.FC = () => {
   }, [])
   return (
     <View style={styles.container}>
-     <Text style={{ fontSize: 24 }}>
+   {/*   <Text style={{ fontSize: 24 }}>
   {`${user?.name.firstname.toUpperCase()} ${user?.name.lastname.toUpperCase()}`}
-</Text>
+</Text> */}
+
+    <Avatar/>
+
     </View>
   );
 };
