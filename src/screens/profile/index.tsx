@@ -5,10 +5,14 @@ import { RootState } from '../../store';
 import { getUserInfo } from '../../store/actions/userActions';
 import Avatar from '../../components/user/avatar';
 import Button from '../../components/ui/button';
+import { userLogOut } from '../../store/actions/authAction';
+import { useNavigation } from '@react-navigation/native';
+import { AUTHNAVIGATOR } from '../../utils/routes';
 
 interface Props { }
 
 const Profile: React.FC = () => {
+  const navigation = useNavigation();
   const { user } = useSelector((state: RootState) => state.user);
   const { isLogin } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
@@ -53,11 +57,11 @@ const Profile: React.FC = () => {
             <Text style={{fontSize: 20, marginTop: 10}}>{user?.email}</Text>
           </View>
           <View style={{padding: 20}}>
-            <Button title="Edit Profile" onPress={() => {}} />
+            <Button title="Profili Düzenle" onPress={() => {}} />
             <Button
-              title="Log out"
+              title="Çıkış Yap"
               onPress={() => {
-                //dispatch(userLogOut());
+                dispatch(userLogOut());
               }}
             />
           </View>
@@ -65,12 +69,12 @@ const Profile: React.FC = () => {
       ) : (
         <View>
           <Text style={{fontSize: 20, marginTop: 20, textAlign: 'center'}}>
-            Henüz giriş yapmadınıza devam etmek için giriş yapınız
+            Henüz giriş yapmadınız devam etmek için giriş yapınız
           </Text>
           <Button
             title="Giriş Yap"
             onPress={() => {
-              //navigation.navigate(AUTHNAVIGATOR.LOGIN);
+              navigation.navigate(AUTHNAVIGATOR.Login);
             }}
           />
         </View>

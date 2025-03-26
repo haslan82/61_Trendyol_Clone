@@ -1,6 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import { AuthState } from '../../models/data/authState';
-import { userLogin } from '../actions/authAction';
+import { userLogOut, userLogin } from '../actions/authAction';
 
 const initialState: AuthState = {
  isLogin: false, 
@@ -36,7 +36,11 @@ export const authSlice = createSlice({
         state.pending = false;
         state.error = action.error.message;
         state.isLogin = false;
-      });
+      })
+      .addCase(userLogOut.fulfilled, (state, action) => {
+        state.isLogin = false;
+        state.token = null;
+      })
   },
 });
 
