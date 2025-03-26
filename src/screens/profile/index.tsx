@@ -82,7 +82,6 @@ const Profile: React.FC = () => {
     </View>
   </ScrollView>
 
-
   );
 };
 const styles = StyleSheet.create({
