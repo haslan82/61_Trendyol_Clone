@@ -4,27 +4,81 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { getUserInfo } from '../../store/actions/userActions';
 import Avatar from '../../components/user/avatar';
+import Button from '../../components/ui/button';
 
 interface Props { }
 
 const Profile: React.FC = () => {
   const { user } = useSelector((state: RootState) => state.user);
+  const { isLogin } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUserInfo({ id: 9 }));
   }, [])
   return (
-    <ScrollView>
+ /*    <ScrollView>
+
       <View style={styles.container}>
 
 
         <Avatar name={user?.name.firstname} surname={user?.name.lastname} image={user?.image} size={100} />
-        <Text style={{ fontSize: 30,marginTop:10,fontWeight: 'bold' }}>
+        <Text style={{ fontSize: 30, marginTop: 10, fontWeight: 'bold' }}>
           {`${user?.name.firstname.toUpperCase()} ${user?.name.lastname.toUpperCase()}`}
         </Text>
-        <Text style={{ fontSize: 20,marginTop:10 }}>{user?.email}</Text>
+        <Text style={{ fontSize: 20, marginTop: 10, marginHorizontal: 10 }}>{user?.email}</Text>
       </View>
-    </ScrollView>
+
+      <View style={{ marginBottom: 20, padding: 20 }}>
+        <Button title="Edit Profile" onPress={() => { }} />
+        <Button title="Change Password" onPress={() => { }} />
+        <Button title="Logout" onPress={() => { }} />
+      </View>
+
+    </ScrollView> */
+
+    <ScrollView >
+    <View style={styles.container}>
+      {isLogin ? (
+        <View>
+          <View style={{alignItems: 'center', marginTop: 20}}>
+            <Avatar
+              name={user?.name?.firstname}
+              surname={user?.name?.lastname}
+              image={user?.image}
+              size={150}
+            />
+            <Text style={{fontSize: 30, marginTop: 10, fontWeight: 'bold'}}>
+              {user?.name.firstname} {user?.name.lastname}
+            </Text>
+            <Text style={{fontSize: 20, marginTop: 10}}>{user?.email}</Text>
+          </View>
+          <View style={{padding: 20}}>
+            <Button title="Edit Profile" onPress={() => {}} />
+            <Button
+              title="Log out"
+              onPress={() => {
+                //dispatch(userLogOut());
+              }}
+            />
+          </View>
+        </View>
+      ) : (
+        <View>
+          <Text style={{fontSize: 20, marginTop: 20, textAlign: 'center'}}>
+            Henüz giriş yapmadınıza devam etmek için giriş yapınız
+          </Text>
+          <Button
+            title="Giriş Yap"
+            onPress={() => {
+              //navigation.navigate(AUTHNAVIGATOR.LOGIN);
+            }}
+          />
+        </View>
+      )}
+    </View>
+  </ScrollView>
+
+
   );
 };
 const styles = StyleSheet.create({
@@ -48,7 +102,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ddd',
     borderBottomWidth: 0,
-   
+
 
 
   }

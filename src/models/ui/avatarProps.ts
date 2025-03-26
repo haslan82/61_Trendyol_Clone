@@ -1,13 +1,12 @@
 interface AvatarProps{
     //size?: "small" | "medium" | "large",
     size: number,
-    uri: string,
     style?: any,
     onPress?: () => void,
     isOnline?: boolean,
-    name: string|null,
-    image?: string,
-    surname: string|null
+    name: string|undefined,
+    image?: string|undefined,
+    surname: string|undefined
 
 }
 export type {AvatarProps};

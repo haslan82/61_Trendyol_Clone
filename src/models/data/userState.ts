@@ -24,16 +24,19 @@ interface User{
     name: Name,
     email: string,
     id: number,
-    phone: string
+    phone: string,
+    image: string,
+    address: Address
 }
 
 interface UserState{
     user: User | null,
     pending: boolean,
     error: any,
+    
     //address: Address
    
 }
 
 
-export type {UserState,Address};
+export type {UserState};
