@@ -10,7 +10,7 @@ const getUserInfo = createAsyncThunk(
     const userUrl = `${USERS_URL.USERS}/${params.id}`;
 
     const response = await getRequest(params, userUrl);
-
+// console.log("==>",response.data);
     return response.data;
   },
 );
