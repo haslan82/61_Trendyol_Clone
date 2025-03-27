@@ -1189,7 +1189,7 @@ PODS:
     - React-utils (= 0.74.7)
   - RNCAsyncStorage (2.1.2):
     - React-Core
-  - RNScreens (4.9.2):
+  - RNScreens (4.10.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1430,7 +1430,7 @@ SPEC CHECKSUMS:
   fmt: 4c2741a687cc09f0634a2e2c72a838b99f1ff120
   glog: fdfdfe5479092de0c4bdbebedd9056951f092c4f
   hermes-engine: 21ea4e6a0b64854652c8c20cb815efdbb3131fdd
-  RCT-Folly: 02617c592a293bd6d418e0a88ff4ee1f88329b47
+  RCT-Folly: 5dc73daec3476616d19e8a53f0156176f7b55461
   RCTDeprecation: c4e6e3f6d44f76c45a964b40fa3eb2475259c027
   RCTRequired: c4886806a178cd895cd4a17dae1642b72e7e8233
   RCTTypeSafety: 4e9f36465ccbcca7b62f5cb8fc1ff2c997c3b92e
@@ -1480,7 +1480,7 @@ SPEC CHECKSUMS:
   React-utils: eb18bf39ea87c4d38f175f41d77b07093eaf7765
   ReactCommon: 9ed4522c478fc82fd9822fd2be960875fccb2c45
   RNCAsyncStorage: addfc2cb6511dbe199c56c6b26ede383b6c38919
-  RNScreens: 2557adbeb88fe3dd34831ce269ad1880af807bba
+  RNScreens: 76e8077f7a887fb2162f75b53982e4e7d0c0451d
   RNVectorIcons: 845eda5c7819bd29699cafd0fc98c9d4afe28c96
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
   Yoga: 9db4b2da1ed5d8e0c94158f9ac379c8b1b529f59
