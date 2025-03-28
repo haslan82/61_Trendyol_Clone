@@ -11,9 +11,9 @@ prepare_react_native_project!
 linkage = ENV['USE_FRAMEWORKS']
 if linkage != nil
   Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
-  use_frameworks! :linkage => linkage.to_sym
+  #use_frameworks! :linkage => linkage.to_sym
 end
-
+use_frameworks! :linkage => :static
 target 'Trendyol' do
   config = use_native_modules!
 
@@ -22,7 +22,6 @@ target 'Trendyol' do
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
-
   target 'TrendyolTests' do
     inherit! :complete
     # Pods for testing
