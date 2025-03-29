@@ -106,8 +106,6 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     borderBottomWidth: 0,
 
-
-
   }
 
 
