@@ -22,7 +22,7 @@ const ProductDetail: React.FC<any> = ({route}) => {
   useEffect(() => {
     dispatch(getProductDetail({id: productId}));
   }, []);
-
+console.log(product.id)
   return (
     <View style={defaultScreenStyle.container}>
       <View style={{flex: 1}}>

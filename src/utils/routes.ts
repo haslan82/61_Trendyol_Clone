@@ -19,3 +19,7 @@ export const TABNAVIGATOR = {
       Register: 'Kayıt Ol',
   
     }
+
+    export const NOTIFICATIONNAVIGATOR = {
+      Notifications: 'Bildirimler',
+    }
