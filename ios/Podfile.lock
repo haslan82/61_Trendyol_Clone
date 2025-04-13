@@ -2621,10 +2621,12 @@ PODS:
     - React-utils (= 0.74.7)
   - RNCAsyncStorage (2.1.2):
     - React-Core
-  - RNFBApp (21.12.3):
+  - RNDeviceInfo (14.0.4):
+    - React-Core
+  - RNFBApp (21.13.0):
     - Firebase/CoreOnly (= 11.10.0)
     - React-Core
-  - RNFBFirestore (21.12.3):
+  - RNFBFirestore (21.13.0):
     - Firebase/Firestore (= 11.10.0)
     - React-Core
     - RNFBApp
@@ -2742,6 +2744,7 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
+  - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBFirestore (from `../node_modules/@react-native-firebase/firestore`)"
   - "RNFBMessaging (from `../node_modules/@react-native-firebase/messaging`)"
@@ -2888,6 +2891,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-async-storage/async-storage"
+  RNDeviceInfo:
+    :path: "../node_modules/react-native-device-info"
   RNFBApp:
     :path: "../node_modules/@react-native-firebase/app"
   RNFBFirestore:
@@ -2979,8 +2984,9 @@ SPEC CHECKSUMS:
   React-utils: 51e69f7e95502e1e8b5f661209e81aac797dc6ce
   ReactCommon: 9dadd8ca53f0a8b28f01799f1c3d44bd1bd0fa0a
   RNCAsyncStorage: addfc2cb6511dbe199c56c6b26ede383b6c38919
-  RNFBApp: 7734835c765a86ea6cdc37570813c5661d7ecb5c
-  RNFBFirestore: 5c557173ccf9f51eb967d96a2f25b349c25fada2
+  RNDeviceInfo: feea80a690d2bde1fe51461cf548039258bd03f2
+  RNFBApp: 9b353818307a942fd12025ec8963375649086f37
+  RNFBFirestore: 73da57b8d901ee46ae46ff2c1eaa478aab1152c8
   RNFBMessaging: cb481e60e60069c87809add23817619d52524b5a
   RNScreens: 56095d31477958a19312640b70e6746b2f1a42a3
   RNVectorIcons: 3e3d9442edd8b15b0ef3cac19960048380a10399

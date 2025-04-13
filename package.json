@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^2.1.2",
-    "@react-native-firebase/app": "^21.12.3",
+    "@react-native-firebase/app": "^21.13.0",
     "@react-native-firebase/firestore": "^21.12.3",
     "@react-native-firebase/messaging": "^21.13.0",
     "@react-native-vector-icons/common": "^11.0.0",
@@ -32,6 +32,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-native": "^0.74.1",
+    "react-native-device-info": "^14.0.4",
+    "react-native-push-notification": "^8.1.1",
     "react-native-safe-area-context": "^5.2.0",
     "react-native-screens": "^4.8.0",
     "react-native-vector-icons": "^10.2.0",

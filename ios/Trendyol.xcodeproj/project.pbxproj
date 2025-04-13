@@ -45,6 +45,7 @@
 		5B7EB9410499542E8C5724F5 /* Pods-Trendyol-TrendyolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trendyol-TrendyolTests.debug.xcconfig"; path = "Target Support Files/Pods-Trendyol-TrendyolTests/Pods-Trendyol-TrendyolTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Trendyol/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Trendyol-TrendyolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trendyol-TrendyolTests.release.xcconfig"; path = "Target Support Files/Pods-Trendyol-TrendyolTests/Pods-Trendyol-TrendyolTests.release.xcconfig"; sourceTree = "<group>"; };
+		E8A86DFB2DA7E44E00195DD4 /* Trendyol.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Trendyol.entitlements; path = Trendyol/Trendyol.entitlements; sourceTree = "<group>"; };
 		E8C81F182D96B594005DA48F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC496136E25D5E3BB0A3EA42 /* Pods_Trendyol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trendyol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -91,6 +92,7 @@
 		13B07FAE1A68108700A75B9A /* Trendyol */ = {
 			isa = PBXGroup;
 			children = (
+				E8A86DFB2DA7E44E00195DD4 /* Trendyol.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -437,6 +439,7 @@
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-Trendyol-TrendyolTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 6AA7Y9BW4G;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -465,6 +468,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 6AA7Y9BW4G;
 				INFOPLIST_FILE = TrendyolTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -489,7 +493,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Trendyol/Trendyol.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Trendyol/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = com.Trendyol;
@@ -505,6 +513,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Trendyol;
 				PRODUCT_NAME = Trendyol;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -517,7 +526,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Trendyol/Trendyol.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Trendyol/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = com.Trendyol;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -532,6 +545,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Trendyol;
 				PRODUCT_NAME = Trendyol;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
