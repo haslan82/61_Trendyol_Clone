@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Categories from '../../widgets/categories';
-import { SafeAreaView, ScrollView, View } from 'react-native';
+import { Alert, SafeAreaView, ScrollView, View } from 'react-native';
 import { defaultScreenStyle } from '../../styles/defaultScreenStyle';
 import Introduction from '../../widgets/introduction';
 import BestSeller from '../../widgets/bestSeller';
@@ -20,9 +20,21 @@ const Home: React.FC = () => {
       console.log('Authorization status:', authStatus);
     }
   };
+const getToken = async () => {
+  const token = await messaging().getToken();
+};
+  const setupNotificationListener = async () => {
+     messaging().onMessage(async remoteMessage => {
+       Alert.alert('A new FCM message arrived!', JSON.stringify(remoteMessage));
+     })
+
+  };
+
 
   useEffect(() => {
     requestUserPermission();
+    getToken();
+    setupNotificationListener();
   }, []);
   
 return (
