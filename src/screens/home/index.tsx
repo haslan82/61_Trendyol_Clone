@@ -22,6 +22,7 @@ const Home: React.FC = () => {
   };
 const getToken = async () => {
   const token = await messaging().getToken();
+  console.log(token);
 };
   const setupNotificationListener = async () => {
      messaging().onMessage(async remoteMessage => {
