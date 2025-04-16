@@ -5,7 +5,10 @@ require Pod::Executable.execute_command('node', ['-p',
     {paths: [process.argv[1]]},
   )', __dir__]).strip
 
-platform :ios, min_ios_version_supported
+
+  platform :ios, '15.0'
+
+
 prepare_react_native_project!
 
 linkage = ENV['USE_FRAMEWORKS']
@@ -21,11 +24,11 @@ target 'Trendyol' do
 pod 'FirebaseCoreInternal', :modular_headers => true
 pod 'GoogleUtilities', :modular_headers => true
 pod 'FirebaseCore', :modular_headers => true
-  use_react_native!(
-    :path => config[:reactNativePath],
-    # An absolute path to your application root.
-    :app_path => "#{Pod::Config.instance.installation_root}/.."
-  )
+use_react_native!(
+  :path => config[:reactNativePath],
+  :hermes_enabled => false,
+  :app_path => "#{Pod::Config.instance.installation_root}/.."
+)
   target 'TrendyolTests' do
     inherit! :complete
     # Pods for testing
@@ -41,3 +44,4 @@ pod 'FirebaseCore', :modular_headers => true
     )
   end
 end
+

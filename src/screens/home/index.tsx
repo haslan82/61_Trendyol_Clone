@@ -22,10 +22,10 @@ const Home: React.FC = () => {
   };
 const getToken = async () => {
   const token = await messaging().getToken();
-  console.log(token);
+  console.log("Token:",token);
 };
-  const setupNotificationListener = async () => {
-     messaging().onMessage(async remoteMessage => {
+  const setupNotificationListener =() => {
+     messaging().onNotificationOpenedApp(async remoteMessage => {
        Alert.alert('A new FCM message arrived!', JSON.stringify(remoteMessage));
      })
 
