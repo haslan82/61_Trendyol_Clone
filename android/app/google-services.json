@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "342307389036",
+    "project_id": "trendyol-firebase",
+    "storage_bucket": "trendyol-firebase.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342307389036:android:275856453417ae64266249",
+        "android_client_info": {
+          "package_name": "com.trendyol"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAx9irKvVgXg6juU6VwhESysxG5wzmNFBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -35,7 +35,7 @@ const getToken = async () => {
   useEffect(() => {
     requestUserPermission();
     getToken();
-    setupNotificationListener();
+   /*  setupNotificationListener(); */
   }, []);
   
 return (
