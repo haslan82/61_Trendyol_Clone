@@ -16,8 +16,10 @@
       "api_key": [
         {
           "current_key": "AIzaSyAx9irKvVgXg6juU6VwhESysxG5wzmNFBg"
+          /* "current_key":(process.env.API_KEY) */
         }
-      ],
+      ]
+      ,
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": []
