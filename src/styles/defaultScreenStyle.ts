@@ -14,4 +14,5 @@ const defaultScreenStyle = StyleSheet.create({
       flex: 1,
     }
   })
+  
   export { defaultScreenStyle}
