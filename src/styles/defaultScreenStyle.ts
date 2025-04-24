@@ -15,4 +15,5 @@ const defaultScreenStyle = StyleSheet.create({
     }
   })
   
+  
   export { defaultScreenStyle}
