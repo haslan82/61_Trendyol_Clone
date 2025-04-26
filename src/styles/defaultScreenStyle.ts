@@ -6,7 +6,6 @@ import { Colors } from "../themes/colors";
 const defaultScreenStyle = StyleSheet.create({
   safeAreaContainer:{
     flex: 1,
-    
   },
     container: {
       padding: 10,
