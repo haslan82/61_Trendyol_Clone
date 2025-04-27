@@ -1,8 +1,6 @@
 import { StyleSheet } from "react-native";
 import { Colors } from "../themes/colors";
 
-
-
 const defaultScreenStyle = StyleSheet.create({
   safeAreaContainer:{
     flex: 1,
