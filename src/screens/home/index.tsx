@@ -21,7 +21,7 @@ const Home: React.FC = () => {
     }
   };
 const getToken = async () => {
-  const token = await messaging().getToken();
+  const token =  messaging().getToken();
   console.log("Token:",token);
 };
   const setupNotificationListener =() => {
@@ -38,6 +38,21 @@ const getToken = async () => {
    /*  setupNotificationListener(); */
   }, []);
   
+ /*  useEffect(() => {
+    const unsubscribe = messaging().onNotificationOpenedApp(
+      async remoteMessage => {
+        Alert.alert(
+          'A new FCM message arrived!',
+          JSON.stringify(remoteMessage),
+        );
+      },
+    );
+  
+    return unsubscribe;
+  }, []);
+   */
+
+
 return (
   <SafeAreaView style={defaultScreenStyle.safeAreaContainer}>
     <ScrollView

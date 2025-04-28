@@ -5,6 +5,7 @@ import {cartSlice} from './slice/cartSlice';
 import {authSlice} from './slice/authSlice';
 import {favoriteSlice} from './slice/favoriteSlice';
 import { userSlice } from './slice/userSlice';
+import notificationSlice from './slice/notificationSlice';
 
 export const store = configureStore({
   reducer: {
@@ -13,7 +14,8 @@ export const store = configureStore({
     cart: cartSlice.reducer,
     auth: authSlice.reducer,
     favorites: favoriteSlice.reducer,
-    user:userSlice.reducer
+    user:userSlice.reducer,
+    notifications:notificationSlice.reducer
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
