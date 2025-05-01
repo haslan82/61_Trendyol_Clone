@@ -2,9 +2,6 @@ import {createSlice} from '@reduxjs/toolkit';
 import { NotificationState } from '../../models/data/notificationState';
 
 
-
-
-
 const initialState: NotificationState = {
   notifications: [],
   pending: false,
