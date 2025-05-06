@@ -7,7 +7,6 @@ const initialState: NotificationState = {
   error: null,
 };
 
-
 export const notificationSlice = createSlice({
   name: 'notifications',
   initialState,
