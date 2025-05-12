@@ -20,6 +20,7 @@ const userLogin = createAsyncThunk('auth/userLogin', async (params: object) => {
 });
 
 
+
 const userLogOut = createAsyncThunk('auth/userLogOut', async () => {
   try {
     await AsyncStorage.removeItem('token');
