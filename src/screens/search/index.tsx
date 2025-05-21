@@ -11,5 +11,5 @@ const Search: React.FC<Props> = () => {
   );
 };
 
-
 export default Search;
+
