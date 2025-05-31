@@ -35,6 +35,6 @@ This project aims to provide users with an easy, fast, and enjoyable shopping ex
 
 ### GIF
 
-![](./assets/trendyolGif.mp4)
+![](./assets/REC-20250529230222.mp4)
 
 
