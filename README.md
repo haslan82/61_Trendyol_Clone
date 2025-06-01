@@ -18,7 +18,6 @@ React Native Async Storage → Local data storage
 Firebase Authentication → User authentication (login/logout)
 
 
-
 ## 🌟 Project Goal:
 
 This project aims to provide users with an easy, fast, and enjoyable shopping experience on mobile devices. With its dynamic design, user-friendly navigation, and performance-oriented architecture, it serves as an inspiring example for modern e-commerce applications.
