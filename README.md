@@ -23,7 +23,6 @@ Firebase Authentication → User authentication (login/logout)
 This project aims to provide users with an easy, fast, and enjoyable shopping experience on mobile devices. With its dynamic design, user-friendly navigation, and performance-oriented architecture, it serves as an inspiring example for modern e-commerce applications.
 
 
-
 #ReactNative #TrendyolClone #MobileAppDevelopment #EcommerceApp  #Redux-Toolkit
 
 ### Feel free to contact me to learn more and explore my projects!
