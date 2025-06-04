@@ -32,6 +32,7 @@ This project aims to provide users with an easy, fast, and enjoyable shopping ex
 ###  Designed by <a href="https://www.linkedin.com/in/h%C3%BCseyin-aslan-128519203/" target="_blank">Hüseyin ASLAN</a> 
 
 
+
 ### GIF
 
 ![](./assets/REC-3gif.gif)
